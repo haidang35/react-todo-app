@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+:root {
+  --blue: #4facfe;
+  --green-light: #00f2fe;
+  --white: #ffff;
+  --grey: #e0dddda3;
+  --red: red;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-app {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right,
+    var(--blue) 0%,
+    var(--green-light) 100%
+  );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-box {
+  width: 50%;
+  min-height: 300px;
+  background-color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 13px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
+  margin: 0;
+}
+
+.create-box {
+  margin-top: 10px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.create-box input {
+  border: none;
+  background-color: var(--grey);
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.create-box input:focus-visible {
+  outline: none;
+}
+
+.btn-add-task {
+  border: none;
+  padding: 8px 12px;
+  background: linear-gradient(
+    to left,
+    var(--blue) 0%,
+    var(--green-light) 100%
+  );
+  color: var(--white);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.todo-list {
+  margin: 15px 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: linear-gradient(
+    to right,
+    var(--blue) 0%,
+    var(--green-light) 100%
+  );
+  color: var(--white);
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-item span {
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-name {
+  display: flex;
+  align-items: center;
+}
+
+.todo-check {
+  border: none;
+  outline: none;
+  accent-color: var(--red);
+}
+
+
+.todo-check:checked {
+  outline: none;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.todo-actions .icon {
+  cursor: pointer;
+  width: 15px;
+}
+
+.edit-icon {
+  color: rgb(29, 7, 119);
+}
+
+.trash-icon {
+  color: rgb(231, 11, 11);
+}
+
+.done {
+  text-decoration: line-through;
+  text-decoration-color: var(--red);
+}
+
+.error {
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.empty {
+  font-size: 12px;
+  text-align: center;
+  color: var(--blue);
+  margin-top: 1rem;
+  font-weight: bold;
 }
