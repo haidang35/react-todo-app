@@ -130,6 +130,12 @@ export default function TodoApp() {
           ))}
         </div>
       </div>
+      <div className="copyright">
+        Xem hướng dẫn chi tiết tại {" "}
+        <a target="_blank" href="https://www.youtube.com/@dangjinner.official">
+          Dang Jinner
+        </a>
+      </div>
     </div>
   );
 }
